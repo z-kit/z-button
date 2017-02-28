@@ -1,0 +1,178 @@
+/*!
+ * Copyright (c) 2017 z-kit contributors.
+ * MIT LICENSE
+ * https://github.com/z-kit/z-button
+ */
+
+/* Variables */
+:root {
+  --primary-color: #3c91e6;
+  --secondary-color: #333;
+  --warning-color: #fed766;
+  --success-color: #76b245;
+  --danger-color: #f03a47;
+  --disabled-color: #aaa;
+  --default-text-color: #fff;
+  --flat-focus-color: #F0F2EF;
+  --flat-active-color: #DEE0DE;
+}
+
+/* Main block */
+.z-button {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem;
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: var(--default-text-color);
+  border: 2px solid;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  outline-width: 0;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  transition: border-color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out,
+    box-shadow 0.1s ease-in-out;
+}
+
+.z-button:hover,
+.z-button:focus {
+  background-color: color(var(--primary-color) l(65%));
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.z-button:active {
+  background-color: color(var(--primary-color) l(30%));
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+/* Rounded button */
+.z-button--rounded { border-radius: 6rem; }
+
+/* Block button that fills the parent width */
+.z-button--block {
+  display: block;
+  width: 100%;
+}
+
+/* Colors for raised buttons */
+.z-button--secondary { background-color: var(--secondary-color); }
+
+.z-button--secondary:hover,
+.z-button--secondary:focus {
+  background-color: color(var(--secondary-color) l(65%));
+}
+
+.z-button--secondary:active { background-color: color(var(--secondary-color) l(30%)); }
+
+.z-button--success { background-color: var(--success-color); }
+
+.z-button--success:hover,
+.z-button--success:focus {
+  background-color: color(var(--success-color) l(65%));
+}
+
+.z-button--success:active { background-color: color(var(--success-color) l(30%)); }
+
+.z-button--warning { background-color: var(--warning-color); }
+
+.z-button--warning:hover,
+.z-button--warning:focus {
+  background-color: color(var(--warning-color) l(65%));
+}
+
+.z-button--warning:active { background-color: color(var(--warning-color) l(30%)); }
+
+.z-button--danger { background-color: var(--danger-color); }
+
+.z-button--danger:hover,
+.z-button--danger:focus {
+  background-color: color(var(--danger-color) l(65%));
+}
+
+.z-button--danger:active { background-color: color(var(--danger-color) l(30%)); }
+
+/* One icon button */
+.z-button--icon {
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+
+/* Transparent background and bordered button */
+.z-button--bordered {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: currentColor;
+  box-shadow: none;
+}
+
+/* No border or background just the content */
+.z-button--flat {
+  text-transform: uppercase;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.z-button--flat:hover,
+.z-button--flat:focus {
+  box-shadow: none;
+  background-color: var(--flat-focus-color);
+}
+
+.z-button--flat:active {
+  box-shadow: none;
+  background-color: var(--flat-active-color);
+}
+
+/* Alternative colors for flat and bordered buttons */
+.z-button--secondary.z-button--flat,
+.z-button--secondary.z-button--bordered {
+  color: var(--secondary-color);
+}
+
+.z-button--success.z-button--flat,
+.z-button--success.z-button--bordered {
+  color: var(--success-color);
+}
+
+.z-button--warning.z-button--flat,
+.z-button--warning.z-button--bordered {
+  color: var(--warning-color);
+}
+
+.z-button--danger.z-button--flat,
+.z-button--danger.z-button--bordered {
+  color: var(--danger-color);
+}
+
+.z-button--bordered:hover,
+.z-button--bordered:focus {
+  color: var(--default-text-color);
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Disabled state */
+.z-button:disabled {
+  background-color: var(--disabled-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.z-button.z-button--bordered:disabled,
+.z-button.z-button--flat:disabled {
+  background-color: transparent;
+  color: var(--disabled-color);
+}
+
+.z-button.z-button--bordered:disabled { border-color: var(--disabled-color); }
