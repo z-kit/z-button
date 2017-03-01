@@ -55,4 +55,5 @@ storiesOf('Stateless functional component', module)
       <ZButton danger>Danger</ZButton>
     </div>
   ))
-  .add('disabled state', () => <ZButton disabled>Click me!</ZButton>);
+  .add('disabled state', () => <ZButton disabled>Click me!</ZButton>)
+  .add('link', () => <ZButton link>Link button</ZButton>);
