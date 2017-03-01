@@ -13,8 +13,8 @@
   --danger-color: #f03a47;
   --disabled-color: #aaa;
   --default-text-color: #fff;
-  --flat-focus-color: #F0F2EF;
-  --flat-active-color: #DEE0DE;
+  --flat-focus-color: #f0f2ef;
+  --flat-active-color: #dee0de;
 }
 
 /* Main block */
@@ -34,8 +34,9 @@
   cursor: pointer;
   outline-width: 0;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-  transition: border-color 0.1s ease-in-out,
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    border-color 0.1s ease-in-out,
     background-color 0.1s ease-in-out,
     box-shadow 0.1s ease-in-out;
 }
@@ -43,12 +44,12 @@
 .z-button:hover,
 .z-button:focus {
   background-color: color(var(--primary-color) l(65%));
-  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .z-button:active {
   background-color: color(var(--primary-color) l(30%));
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Rounded button */
