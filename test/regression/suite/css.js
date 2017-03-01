@@ -88,14 +88,14 @@ test('CSS component - flat', (t) => {
 test('CSS component - disabled state', (t) => {
   t.plan(1);
   const msg = 'should render disabled button';
-  const expected = true;
+  const expected = 0;
   return Nightmare()
     .goto('http://localhost:6006/iframe.html?selectedKind=CSS%20component&selectedStory=disabled%20state')
     .wait('.z-button')
     .evaluate(() => {
       const buttonStyle = window.getComputedStyle(document.querySelector('.z-button'));
-      const { opacity, backgroundColor } = buttonStyle;
-      return (opacity === '0,5' && backgroundColor === 'rgb(170, 170, 170)');
+      const { opacity } = buttonStyle;
+      return parseInt(opacity, 10);
     })
     .end()
     .then(actual => t.deepEqual(expected, actual, msg));
