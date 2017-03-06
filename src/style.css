@@ -6,11 +6,11 @@
 
 /* Variables */
 :root {
-  --primary-color: #3c91e6;
-  --secondary-color: #333;
-  --warning-color: #fed766;
+  --primary-color: #2386ab;
+  --secondary-color: #26547c;
+  --warning-color: #e0b938;
   --success-color: #76b245;
-  --danger-color: #f03a47;
+  --danger-color: #d8343f;
   --disabled-color: #aaa;
   --default-text-color: #fff;
   --flat-focus-color: #f0f2ef;
