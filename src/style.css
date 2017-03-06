@@ -34,23 +34,15 @@
   cursor: pointer;
   outline-width: 0;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition:
-    border-color 0.1s ease-in-out,
-    background-color 0.1s ease-in-out,
-    box-shadow 0.1s ease-in-out;
+  transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .z-button:hover,
 .z-button:focus {
   background-color: color(var(--primary-color) l(65%));
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.z-button:active {
-  background-color: color(var(--primary-color) l(30%));
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
+.z-button:active { background-color: color(var(--primary-color) l(30%)); }
 
 /* Rounded button */
 .z-button--rounded { border-radius: 6rem; }
@@ -114,7 +106,6 @@
   background-color: transparent;
   color: var(--primary-color);
   border-color: currentColor;
-  box-shadow: none;
 }
 
 /* No border or background just the content */
@@ -124,19 +115,14 @@
   background-color: transparent;
   color: var(--primary-color);
   font-weight: bold;
-  box-shadow: none;
 }
 
 .z-button--flat:hover,
 .z-button--flat:focus {
-  box-shadow: none;
   background-color: var(--flat-focus-color);
 }
 
-.z-button--flat:active {
-  box-shadow: none;
-  background-color: var(--flat-active-color);
-}
+.z-button--flat:active { background-color: var(--flat-active-color); }
 
 /* Alternative colors for flat and bordered buttons */
 .z-button--secondary.z-button--flat,
@@ -162,7 +148,6 @@
 .z-button--bordered:hover,
 .z-button--bordered:focus {
   color: var(--default-text-color);
-  box-shadow: none;
   border-color: transparent;
 }
 
