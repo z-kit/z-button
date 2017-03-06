@@ -61,7 +61,7 @@
   width: 100%;
 }
 
-/* Colors for raised buttons */
+/* Secondary default button color */
 .z-button--secondary { background-color: var(--secondary-color); }
 
 .z-button--secondary:hover,
@@ -71,6 +71,7 @@
 
 .z-button--secondary:active { background-color: color(var(--secondary-color) l(30%)); }
 
+/* Success default button color */
 .z-button--success { background-color: var(--success-color); }
 
 .z-button--success:hover,
@@ -80,6 +81,7 @@
 
 .z-button--success:active { background-color: color(var(--success-color) l(30%)); }
 
+/* Warning default button color */
 .z-button--warning { background-color: var(--warning-color); }
 
 .z-button--warning:hover,
@@ -89,6 +91,7 @@
 
 .z-button--warning:active { background-color: color(var(--warning-color) l(30%)); }
 
+/* Danger default button color */
 .z-button--danger { background-color: var(--danger-color); }
 
 .z-button--danger:hover,
