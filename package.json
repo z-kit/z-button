@@ -63,7 +63,6 @@
   },
   "postcss": {
     "plugins": {
-      "postcss-custom-properties": {},
       "postcss-color-function": {},
       "autoprefixer": {
         "browsers": "last 2 versions"
@@ -139,7 +138,6 @@
     "nightmare": "^2.9.1",
     "null-loader": "^0.1.1",
     "postcss-color-function": "^3.0.0",
-    "postcss-custom-properties": "^5.0.2",
     "postcss-loader": "^1.2.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
