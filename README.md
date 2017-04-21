@@ -14,6 +14,7 @@ A styled button component for your web application.
 - [How to use](#howto)
   - [CSS component](#css)
   - [Stateless Functional Component](#sfc)
+- [Theming](#theming)
 - [License](#license)
 
 ## <a name="install"></a> Install
@@ -113,6 +114,32 @@ Render the HTML by using the SFC and passing props.
 ```jsx
 <ZButton>Click me!</ZButton>
 ```
+
+## Theming
+
+Available since `1.2.0`, now `z-button` supports theming through CSS Variables!
+
+Check the list of variables used:
+
+| Variable | Expected type | Description |
+| ---- | ---- | ---- |
+| --primary-color | `color` | The primary background-color for the buttons |
+| --lighter-primary-color | `color` | background-color for the focused/hovered buttons |
+| --darker-primary-color | `color` | background-color for the active buttons |
+| --secondary-color | `color` | An alternative background-color for the buttons |
+| --lighter-secondary-color | `color` | Alternative background-color for the focused/hovered buttons |
+| --darker-secondary-color | `color` | Alternative background-color for the active buttons |
+| --success-color | `color` | background-color indicating a success action button |
+| --lighter-success-color | `color` | background-color indicating a focused/hovered success action button |
+| --darker-success-color | `color` | background-color indicating an active success action button |
+| --warning-color | `color` | background-color indicating a warning action button |
+| --lighter-warning-color | `color` | background-color indicating a focused/hovered warning action button |
+| --darker-warning-color | `color` | background-color indicating an active warning action button |
+| --danger-color | `color` | background-color indicating a danger action button |
+| --lighter-danger-color | `color` | background-color indicating a focused/hovered danger action button |
+| --darker-danger-color | `color` | background-color indicating an active danger action button |
+| --disabled-color | `color` | background-color indicating a disabled button |
+| --button-text-color | `color` | Text color for the button, usually light |
 
 ## <a name="license"></a> LICENSE
 
