@@ -113,7 +113,7 @@
   "homepage": "https://github.com/z-kit/z-button",
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
-    "ava": "^0.19.1",
+    "ava": "^0.20.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
