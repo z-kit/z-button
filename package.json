@@ -7,20 +7,27 @@
   "jsnext:main": "dist/module.js",
   "module": "dist/module.js",
   "scripts": {
-    "lint": "eslint webpack.config.babel.js .storybook src stories test/regression test/unit/suite && stylelint src/style.css",
-    "test": "npm run lint && npm run unit-test && npm run regression-test",
-    "kill": "fkill node",
+    "ava:bundle": "ava test/unit/testBundle.js",
+    "ava:regression": "ava test/regression/suite",
+    "babel:module": "babel --source-maps -o dist/module.js src/component.js",
+    "build:module": "run-s create-output-dir babel:module",
+    "build:test": "webpack --config test/unit/webpack.config.babel.js",
+    "build": "run-p package min-package build:module",
     "clean": "rimraf dist",
-    "unit-test": "webpack --config test/unit/webpack.config.babel.js && ava test/unit/testBundle.js",
-    "regression-test": "node test/regression/server.js && ava test/regression/suite",
-    "regression-test-kill": "npm run regression-test && npm run kill",
-    "build-module": "mkdirp dist && babel --source-maps -o dist/module.js src/component.js",
-    "package": "webpack",
+    "create-output-dir": "mkdirp dist",
+    "lint:css": "stylelint src/style.css",
+    "lint:js": "eslint webpack.config.babel.js .storybook src stories test/regression test/unit/suite",
+    "lint": "run-p lint:js lint:css",
     "min-package": "cross-env MIN=true webpack -p",
-    "build": "npm run package && npm run min-package && npm run build-module",
+    "package": "webpack",
+    "prepare": "npm run build",
+    "regression-suite": "run-s wait-storybook-server ava:regression",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006",
-    "prepublish": "npm run build"
+    "test:regression": "node test/regression/startTest.js",
+    "test:unit": "run-s build:test ava:bundle",
+    "test": "run-s lint test:unit test:regression",
+    "wait-storybook-server": "wait-on http-get://localhost:6006"
   },
   "ava": {
     "require": [
@@ -33,7 +40,9 @@
       "es2015",
       "react"
     ],
-    "plugins": ["transform-object-rest-spread"],
+    "plugins": [
+      "transform-object-rest-spread"
+    ],
     "ignore": [
       "src/webcomponent"
     ]
@@ -48,10 +57,21 @@
     "rules": {
       "new-cap": "off",
       "import/no-extraneous-dependencies": "off",
+      "import/no-unresolved": "off",
+      "import/no-self-import": "off",
       "react/prop-types": "off",
       "react/jsx-filename-extension": "off",
       "global-require": "off",
-      "jsx-a11y/href-no-hash": "off"
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "never"
+        }
+      ]
     },
     "settings": {
       "import/resolver": {
