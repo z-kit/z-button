@@ -33,6 +33,7 @@ export function ZButton(e) {
     flat,
     icon,
     link,
+    type = link ? null : 'button',
     ...props
   }) => {
     const classes = [classnames.button];
@@ -45,7 +46,9 @@ export function ZButton(e) {
     if (rounded) classes.push(classnames.isRounded);
     if (block) classes.push(classnames.isBlock);
     if (icon) classes.push(classnames.isIcon);
-    return e(link ? 'a' : 'button', { className: classes.join(' '), ...props }, children);
+    const elProps = { className: classes.join(' '), ...props };
+    if (type !== null) elProps.type = type;
+    return e(link ? 'a' : 'button', elProps, children);
   };
 }
 
