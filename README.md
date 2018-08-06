@@ -1,6 +1,6 @@
 # <a name="z-button"></a> z-button
 
-[![Build]](https://travis-ci.org/z-kit/z-button) [![SemVer]](http://semver.org/) [![License]](LICENSE)
+[![Build]](https://travis-ci.org/z-kit/z-button) [![SemVer]](http://semver.org/) [![Greenkeeper badge](https://badges.greenkeeper.io/z-kit/z-button.svg)](https://greenkeeper.io/) [![License]](LICENSE)
 
 A styled button component for your web application.
 
