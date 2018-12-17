@@ -1,4 +1,4 @@
-import { test } from 'ava';
+import test from 'ava';
 import Nightmare from 'nightmare';
 
 test('SFC component - default', (t) => {
@@ -40,17 +40,16 @@ test('SFC component - rounded', (t) => {
 test('SFC component - block', (t) => {
   t.plan(1);
   const msg = 'should render block button';
-  const expected = true;
   return Nightmare()
     .goto('http://localhost:6006/iframe.html?selectedKind=Stateless%20functional%20component&selectedStory=block')
     .wait('.z-button')
     .evaluate(() => {
-      const containerStyle = window.getComputedStyle(document.querySelector('body > div'));
-      const buttonStyle = window.getComputedStyle(document.querySelector('.z-button'));
-      return containerStyle.width === buttonStyle.width;
+      const expected = document.querySelector('#root').getBoundingClientRect().width;
+      const actual = document.querySelector('.z-button').getBoundingClientRect().width;
+      return { expected, actual };
     })
     .end()
-    .then(actual => t.deepEqual(expected, actual, msg));
+    .then(({ expected, actual }) => t.deepEqual(expected, actual, msg));
 });
 
 test('SFC component - bordered', (t) => {
