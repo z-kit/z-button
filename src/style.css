@@ -32,10 +32,11 @@
   box-sizing: border-box;
   display: inline-block;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.75rem;
   min-width: 2rem;
   text-align: center;
   font-size: 1rem;
+  line-height: 1rem;
   background-color: var(--primary-color);
   color: var(--button-text-color);
   border: 2px solid;
