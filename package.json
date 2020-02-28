@@ -187,7 +187,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "wait-on": "^3.3.0",
+    "wait-on": "^4.0.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-node-externals": "^1.7.2"
